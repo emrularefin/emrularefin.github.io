@@ -32,16 +32,24 @@ h2::after{content:"";display:block;width:44px;height:3px;background:var(--acc);m
 .job h3{margin:0}.job small{color:var(--mute)}.job ul{padding-left:1.1rem;margin:.6rem 0}.job li{margin:.3rem 0}
 .chips span{display:inline-block;background:var(--acc2);color:var(--acc);padding:.3rem .8rem;border-radius:99px;margin:.25rem .25rem 0 0;font-size:.9rem}
 footer{padding:2rem 1.2rem;color:var(--mute);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
+.ph{float:right;width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--card);margin:0 0 1rem 1rem}
+.stats{clear:both}[hidden]{display:none!important}
+.lead{color:var(--mute);max-width:720px;margin:-.4rem 0 1.2rem}
+.ev .k{display:inline-block;font-size:.75rem;color:var(--acc);background:var(--acc2);padding:.1rem .6rem;border-radius:99px;margin-bottom:.5rem}
+.ev a{display:inline-block;margin-top:.7rem;font-weight:600;text-decoration:none}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.2rem}
+.gal figure{margin:0}.gal img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.gal figcaption{font-size:.85rem;color:var(--mute);margin-top:.3rem}
 </style>
 </head>
 <body>
-<nav><div><b>Evan Arefin</b><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a></div></nav>
+<nav><div><b>Evan Arefin</b><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#evidence">Evidence</a><a href="#remote">Remote</a><a href="#education">Education</a><a href="#contact">Contact</a></div></nav>
 
 <header><div>
-<span class="tag">Open to administrative opportunities</span>
+<img class="ph" src="photo.jpg" alt="Portrait of Md. Emrul Arefin" onerror="this.remove()"><span class="tag">Open to administrative opportunities</span>
 <h1>Md. Emrul Arefin</h1>
 <p class="sub">Office Manager · Higher Education Administration · Admissions &amp; Academic Operations</p>
-<a class="btn" href="#contact">Get in touch</a><a class="btn o" href="#experience">View experience</a>
+<a class="btn" href="#contact">Get in touch</a><a class="btn o" href="#experience">View experience</a><a class="btn o" data-ev href="Md-Emrul-Arefin-CV.pdf" download>Download CV</a>
 <div class="stats">
 <div class="stat"><b>10+</b><span>Years in university administration</span></div>
 <div class="stat"><b>2019</b><span>Office Manager at IUB since</span></div>
@@ -89,6 +97,34 @@ footer{padding:2rem 1.2rem;color:var(--mute);font-size:.9rem;text-align:center;b
 <section id="skills"><h2>Tools &amp; skills</h2>
 <div class="chips"><span>iRAS Student Information System</span><span>MS Office &amp; Excel</span><span>Graphic Design</span><span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>After Effects</span><span>Social Media Marketing</span><span>Customer Support</span><span>Records Management</span><span>Budgeting</span></div></section>
 
+<section id="evidence"><h2>Evidence of my work</h2>
+<p class="lead">Documents and samples that back up the responsibilities listed above. Sensitive personal data and figures have been removed.</p>
+<div class="grid" id="evgrid">
+<div class="card ev" data-ev><span class="k">Admissions &amp; Marketing</span><h3>Admission campaign samples</h3><p>Social media and SMS campaign material used for the MPH admission cycle.</p><a href="evidence/admission-campaign.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Admissions</span><h3>Admission viva schedule</h3><p>Sample viva voce schedule coordinated with the selection committee (personal data removed).</p><a href="evidence/admission-viva-schedule.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Faculty Coordination</span><h3>Adjunct faculty recruitment</h3><p>Sample circular or interview and demo session schedule for adjunct faculty.</p><a href="evidence/adjunct-recruitment.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Meetings</span><h3>Meeting minutes sample</h3><p>Minutes prepared for a departmental or DAC meeting.</p><a href="evidence/meeting-minutes.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Office &amp; Finance</span><h3>Annual budget draft</h3><p>Proposed departmental budget prepared for the fiscal year (figures may be redacted).</p><a href="evidence/budget-draft.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Events</span><h3>Orientation or event programme</h3><p>Programme or schedule from a student orientation, seminar or workshop.</p><a href="evidence/orientation-program.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Correspondence</span><h3>Official letters &amp; memos</h3><p>Sample memos, letters and emails drafted for the department.</p><a href="evidence/official-letters.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Verification</span><h3>Experience certificate</h3><p>Employment or experience letter confirming my role.</p><a href="evidence/experience-certificate.pdf" target="_blank" rel="noopener">View document →</a></div>
+<div class="card ev" data-ev><span class="k">Education</span><h3>MBA certificate</h3><p>Academic credential, Port City International University.</p><a href="evidence/mba-certificate.pdf" target="_blank" rel="noopener">View document →</a></div>
+</div>
+<div class="gal" id="gal"><figure data-ev-img><img src="evidence/creative-1.jpg" alt="Design work sample 1" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 1</figcaption></figure><figure data-ev-img><img src="evidence/creative-2.jpg" alt="Design work sample 2" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 2</figcaption></figure><figure data-ev-img><img src="evidence/creative-3.jpg" alt="Design work sample 3" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 3</figcaption></figure></div>
+<p class="lead" style="margin-top:1.2rem">Official references and verification letters are available on request.</p></section>
+
+<section id="remote"><h2>Remote &amp; international work</h2>
+<p class="lead">I’m available for part-time or full-time remote roles anywhere in the world, on an hourly or monthly basis.</p>
+<div class="grid">
+<div class="card"><h3>Engagement</h3><p>Part-time or full-time · Hourly or monthly payment · Long-term or project-based.</p></div>
+<div class="card"><h3>Time zone</h3><p>Bangladesh Standard Time (UTC+6). Flexible to overlap with your working hours.</p></div>
+<div class="card"><h3>Remote administration</h3><p>Virtual assistance, email and calendar support, records and database management, documentation and reporting.</p></div>
+<div class="card"><h3>HR &amp; recruitment support</h3><p>Candidate coordination, interview scheduling, onboarding support and staff records.</p></div>
+<div class="card"><h3>Marketing &amp; creative</h3><p>Social media management, education marketing and counselling, graphic design and motion graphics.</p></div>
+<div class="card"><h3>Customer support</h3><p>Prompt, professional communication with students, candidates and clients in English and Bengali.</p></div>
+</div>
+<a class="btn" href="mailto:emrularefin@gmail.com?subject=Remote%20opportunity">Discuss a remote role</a></section>
+
 <section id="education"><h2>Education</h2>
 <div class="grid">
 <div class="card"><h3>MBA, Human Resource Management</h3><p>Port City International University · 2019</p></div>
@@ -103,6 +139,19 @@ footer{padding:2rem 1.2rem;color:var(--mute);font-size:.9rem;text-align:center;b
 <a class="btn o" style="margin-top:0" href="https://linkedin.com/in/arefiniub" target="_blank" rel="noopener">LinkedIn</a></div></section>
 </main>
 <footer>© <span id="y">2026</span> Md. Emrul Arefin. All rights reserved.</footer>
-<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+if(location.protocol.indexOf("http")===0){
+ var els=[].slice.call(document.querySelectorAll("[data-ev]"));
+ Promise.all(els.map(function(el){
+  var a=el.tagName==="A"?el:el.querySelector("a");
+  return fetch(a.getAttribute("href"),{method:"HEAD"}).then(function(r){if(!r.ok)el.hidden=true}).catch(function(){el.hidden=true});
+ })).then(function(){
+  var g=document.getElementById("evgrid"),m=document.getElementById("gal");
+  var any=g.querySelector("[data-ev]:not([hidden])")||m.querySelector("figure:not([hidden])");
+  if(!any)document.getElementById("evidence").hidden=true;
+ });
+}
+</script>
 </body>
 </html>
