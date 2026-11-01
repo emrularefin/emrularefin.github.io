@@ -123,6 +123,20 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 .stat{text-align:center}
 .stat span{display:block;line-height:1.4}
 .ev video{width:100%;border-radius:10px;margin-top:.6rem;background:#000}
+.evgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;align-items:start}
+.evc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--y);border-radius:12px;padding:1.2rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+.evc:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,.12);border-color:var(--g);border-top-color:var(--r)}
+.evc .k{display:inline-block;font-size:.75rem;background:var(--y);color:#000;padding:.1rem .6rem;border-radius:99px;margin-bottom:.5rem}
+.evc h3{margin:.1rem 0 .3rem;font-size:1.05rem}.evc p{margin:0 0 .9rem;color:var(--mute);font-size:.93rem}
+.slot{border:2px dashed var(--a);border-radius:10px;padding:1.4rem 1rem;text-align:center;background:rgba(255,209,106,.2)}
+.slot b{display:block;margin-bottom:.2rem}.slot span{font-size:.85rem;color:var(--mute)}
+.its{display:grid;gap:.9rem}.it{margin:0}
+.it img,.it video{width:100%;display:block;border-radius:10px;border:1px solid var(--line)}
+.it .ratio{aspect-ratio:16/9}.it iframe{width:100%;border:0;border-radius:10px;display:block}
+.it .ratio iframe{height:100%}.it iframe.pdf{height:340px;border:1px solid var(--line)}
+.it figcaption{font-size:.85rem;margin-top:.3rem;color:var(--mute)}
+.it .open{display:inline-block;margin-top:.4rem;font-weight:600;font-size:.9rem;text-decoration:none}
+@media(max-width:640px){.evgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -184,22 +198,8 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 </div></section>
 
 <section id="evidence"><h2>Evidence of my work</h2>
-<p class="lead">Documents and samples that back up the responsibilities listed above. Sensitive personal data and figures have been removed.</p>
-<div class="grid" id="evgrid">
-<div class="card ev" data-ev><span class="k">Admissions &amp; Marketing</span><h3>Admission campaign samples</h3><p>Social media and SMS campaign material used for the MPH admission cycle.</p><a href="evidence/admission-campaign.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Admissions</span><h3>Admission viva schedule</h3><p>Sample viva voce schedule coordinated with the selection committee (personal data removed).</p><a href="evidence/admission-viva-schedule.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Faculty Coordination</span><h3>Adjunct faculty recruitment</h3><p>Sample circular or interview and demo session schedule for adjunct faculty.</p><a href="evidence/adjunct-recruitment.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Meetings</span><h3>Meeting minutes sample</h3><p>Minutes prepared for a departmental or DAC meeting.</p><a href="evidence/meeting-minutes.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Office &amp; Finance</span><h3>Annual budget draft</h3><p>Proposed departmental budget prepared for the fiscal year (figures may be redacted).</p><a href="evidence/budget-draft.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Events</span><h3>Orientation or event programme</h3><p>Programme or schedule from a student orientation, seminar or workshop.</p><a href="evidence/orientation-program.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Correspondence</span><h3>Official letters &amp; memos</h3><p>Sample memos, letters and emails drafted for the department.</p><a href="evidence/official-letters.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Verification</span><h3>Experience certificate</h3><p>Employment or experience letter confirming my role.</p><a href="evidence/experience-certificate.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">Education</span><h3>MBA certificate</h3><p>Academic credential, Port City International University.</p><a href="evidence/mba-certificate.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">AI &amp; Prompt Engineering</span><h3>Prompt engineering samples</h3><p>Example prompts and outputs created with Claude, Gemini and ChatGPT for admin and marketing tasks.</p><a href="evidence/prompt-examples.pdf" target="_blank" rel="noopener">View document →</a></div>
-<div class="card ev" data-ev><span class="k">AI Video</span><h3>AI promotional video</h3><p>A promotional video created with AI tools.</p><video controls preload="metadata" playsinline src="evidence/ai-promo-video.mp4"></video><a href="evidence/ai-promo-video.mp4" target="_blank" rel="noopener">Open video →</a></div>
-<div class="card ev" data-ext><span class="k">AI Video</span><h3>Watch my AI promotional videos</h3><p>More AI-made promotional videos on my channel.</p><a href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-</div>
-<div class="gal" id="gal"><figure data-ev-img><img src="evidence/creative-1.jpg" alt="Design work sample 1" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 1</figcaption></figure><figure data-ev-img><img src="evidence/creative-2.jpg" alt="Design work sample 2" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 2</figcaption></figure><figure data-ev-img><img src="evidence/creative-3.jpg" alt="Design work sample 3" onerror="this.parentNode.hidden=true"><figcaption>Design / promotion sample 3</figcaption></figure></div>
+<p class="lead">Proof of my skills in PDF, image, video and YouTube formats. Sensitive personal data and figures have been removed.</p>
+<div class="evgrid" id="evgrid"></div>
 <p class="lead" style="margin-top:1.2rem">Official references and verification letters are available on request.</p></section>
 
 <section id="remote"><h2>Remote &amp; international work</h2>
@@ -241,22 +241,46 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 <script>
 document.getElementById("y").textContent=new Date().getFullYear();
 document.querySelectorAll("#soc a").forEach(function(a){if(a.getAttribute("href")==="#")a.addEventListener("click",function(e){e.preventDefault()})});
-document.querySelectorAll("[data-ext]").forEach(function(e){if(e.querySelector("a").getAttribute("href")==="#")e.hidden=true});
 var rv=document.querySelectorAll("section,.stat");
 rv.forEach(function(e){e.classList.add("rv")});
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add("in")})}
 
-if(location.protocol.indexOf("http")===0){
- var els=[].slice.call(document.querySelectorAll("[data-ev]"));
- Promise.all(els.map(function(el){
-  var a=el.tagName==="A"?el:el.querySelector("a");
-  return fetch(a.getAttribute("href"),{method:"HEAD"}).then(function(r){if(!r.ok)el.hidden=true}).catch(function(){el.hidden=true});
- })).then(function(){
-  var g=document.getElementById("evgrid"),m=document.getElementById("gal");
-  var any=g.querySelector(".ev:not([hidden])")||m.querySelector("figure:not([hidden])");
-  if(!any)document.getElementById("evidence").hidden=true;
- });
-}
+</script>
+<script src="evidence-config.js"></script>
+<script>
+(function(){
+var grid=document.getElementById("evgrid");if(!grid)return;
+var cfg=window.EVIDENCE||[],set=window.EVIDENCE_SETTINGS||{},live=location.protocol.indexOf("http")===0;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function yt(u){var m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/);return m?m[1]:null}
+function kind(u){if(yt(u))return"yt";var e=u.split("?")[0].split(".").pop().toLowerCase();
+ if(/^(jpe?g|png|webp|gif)$/.test(e))return"img";if(/^(mp4|webm|mov)$/.test(e))return"vid";if(e==="pdf")return"pdf";return"link"}
+function ok(u,k){if(k==="yt"||!live||/^https?:/i.test(u))return Promise.resolve(true);
+ return fetch(u,{method:"HEAD"}).then(function(r){return r.ok}).catch(function(){return false})}
+function norm(i){if(typeof i==="string")i={src:i};return i&&i.src&&String(i.src).trim()?{src:String(i.src).trim(),title:i.title||""}:null}
+function node(it,k,skill){var f=document.createElement("figure");f.className="it";var u=esc(it.src),t=esc(it.title),h="";
+ if(k==="yt")h='<div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/'+yt(it.src)+'" title="'+esc(it.title||skill)+'" loading="lazy" allow="accelerometer;encrypted-media;picture-in-picture" allowfullscreen></iframe></div>';
+ else if(k==="img")h='<a href="'+u+'" target="_blank" rel="noopener"><img loading="lazy" src="'+u+'" alt="'+esc(it.title||skill)+'"></a>';
+ else if(k==="vid")h='<video controls preload="metadata" playsinline src="'+u+'"></video>';
+ else if(k==="pdf")h='<iframe class="pdf" src="'+u+'" title="'+esc(it.title||skill)+'" loading="lazy"></iframe><a class="open" href="'+u+'" target="_blank" rel="noopener">Open PDF →</a>';
+ else h='<a class="btn o" style="margin:0" href="'+u+'" target="_blank" rel="noopener">'+(t||"Open link")+' →</a>';
+ if(t&&k!=="link")h+='<figcaption>'+t+'</figcaption>';
+ f.innerHTML=h;return f}
+var jobs=cfg.map(function(c){
+ var card=document.createElement("div");card.className="evc";
+ card.innerHTML='<span class="k">'+esc(c.tag||"Skill evidence")+'</span><h3>'+esc(c.skill||"")+'</h3>'+(c.note?'<p>'+esc(c.note)+'</p>':'');
+ grid.appendChild(card);
+ var items=(c.items||[]).map(norm).filter(Boolean);
+ return Promise.all(items.map(function(it){var k=kind(it.src);return ok(it.src,k).then(function(g){return g?{it:it,k:k}:null})})).then(function(r){
+  r=r.filter(Boolean);
+  if(!r.length){
+   if(set.showPlaceholders===false){card.remove();return}
+   card.insertAdjacentHTML("beforeend",'<div class="slot"><b>Evidence coming soon</b><span>PDF · JPG · Video · YouTube link</span></div>');return}
+  var w=document.createElement("div");w.className="its";
+  r.forEach(function(x){w.appendChild(node(x.it,x.k,c.skill))});card.appendChild(w)});
+});
+Promise.all(jobs).then(function(){if(!grid.children.length)document.getElementById("evidence").hidden=true});
+})();
 </script>
 </body>
 </html>
