@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><script>document.documentElement.className="js"</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Md. Emrul Arefin | Office Manager & Higher Education Administrator</title>
 <meta name="description" content="Portfolio of Md. Emrul Arefin (Evan): Office Manager, Higher Education Administration, Admissions & Academic Operations, Dhaka, Bangladesh.">
 <style>
-:root{--bg:#f7f8fa;--card:#fff;--ink:#1c2330;--mute:#5b6577;--acc:#0f6b5c;--acc2:#e7f3f0;--line:#e2e6ec}
-@media(prefers-color-scheme:dark){:root{--bg:#10151c;--card:#171e28;--ink:#e8ecf2;--mute:#9aa6b8;--acc:#4fc3ad;--acc2:#16302b;--line:#263042}}
+:root{color-scheme:light;--bg:#fffaf0;--card:#fffdf8;--ink:#000;--mute:#222;--acc:#4f7d32;--acc2:#fff0c4;--line:#eadfc2;--g:#4f7d32;--y:#ffd16a;--a:#f5b52e;--r:#d9361e}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
 a{color:var(--acc)}
@@ -65,6 +64,62 @@ html{scroll-padding-top:64px}img{max-width:100%}
  .job{padding-left:.9rem}
  .card .btn{margin-top:.6rem!important}
 }
+
+/* effects */
+body{background:var(--bg);color:#000}
+a{transition:color .25s}
+nav a{position:relative;padding-bottom:3px}
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover::after{transform:scaleX(1)}nav a:hover{color:#000}
+.btn{transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(15,107,92,.28)}
+.btn.o:hover{background:var(--acc);color:#fff}
+.card,.stat{transition:transform .3s,box-shadow .3s,border-color .3s,background .3s}
+.card:hover,.stat:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,.12);border-color:var(--acc);background:#fff}
+.card h3{transition:color .3s}.card:hover h3{color:var(--acc)}
+.job{padding:1rem 1.2rem;border-radius:0 12px 12px 0;transition:background .3s,border-color .3s,transform .3s,box-shadow .3s}
+.job:hover{background:var(--card);border-left-width:6px;transform:translateX(6px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.chips span{transition:transform .25s,background .25s,color .25s;cursor:default}
+.chips span:hover{background:var(--acc);color:#fff;transform:translateY(-3px) scale(1.05)}
+h2::after{transition:width .4s}section:hover h2::after{width:100px}
+.ph{transition:transform .4s,box-shadow .4s}.ph:hover{transform:scale(1.05) rotate(-2deg);box-shadow:0 16px 40px rgba(0,0,0,.28)}
+.gal img{transition:transform .35s,box-shadow .35s}.gal img:hover{transform:scale(1.04);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.tag{animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-4px)}}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:640px){.job:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+
+/* palette: green #4F7D32, yellow #FFD16A, amber #F5B52E, red #D9361E */
+::selection{background:var(--y);color:#000}
+nav{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,var(--y) 25% 50%,var(--a) 50% 75%,var(--r) 75% 100%) 1;border-bottom:1px solid var(--line)}
+nav a::after{background:var(--r)}
+header{background:linear-gradient(135deg,var(--y) 0%,#ffe9ae 45%,var(--bg) 100%)}
+.tag{background:var(--a);color:#000;border-color:var(--a);font-weight:600}
+.btn{background:var(--g);color:#fff}
+.btn:not(.o):hover{background:var(--r);box-shadow:0 10px 22px rgba(217,54,30,.3)}
+.btn.o{background:none;border:2px solid var(--g);color:var(--g)}
+.btn.o:hover{background:var(--g);color:#fff;box-shadow:0 10px 22px rgba(79,125,50,.3)}
+.stat{border-top:4px solid var(--a)}
+.stat b{color:var(--g)}.stat:nth-child(even) b{color:var(--r)}
+.card{border-top:4px solid var(--y)}
+.card:hover,.stat:hover{border-color:var(--g);border-top-color:var(--r)}
+.card:hover h3{color:var(--g)}
+h2::after{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--g) 0 34%,var(--a) 34% 67%,var(--r) 67%)}
+.job{border-left-color:var(--a)}.job:hover{border-left-color:var(--g)}
+.chips span{background:var(--y);color:#000;font-weight:500}
+.chips span:hover{background:var(--g);color:#fff}
+.ev .k{background:var(--y);color:#000}
+.ev a,a{color:var(--g)}.ev a:hover,a:hover{color:var(--r)}
+.btn:hover{color:#fff}
+.ph{border-color:var(--a)}
+footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,var(--y) 25% 50%,var(--a) 50% 75%,var(--r) 75% 100%) 1;color:#000}
+.card .chips{margin-top:.6rem}
+.soc-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line)}
+.soc-row a{display:inline-block;padding:.45rem 1rem;border-radius:99px;background:var(--y);color:#000;text-decoration:none;font-weight:600;font-size:.9rem;transition:transform .25s,background .25s,color .25s}
+.soc-row a:hover{background:var(--g);color:#fff;transform:translateY(-3px)}
+@media(max-width:640px){.soc-row a{flex:1 1 40%;text-align:center}}
 </style>
 </head>
 <body>
@@ -120,7 +175,10 @@ html{scroll-padding-top:64px}img{max-width:100%}
 </section>
 
 <section id="skills"><h2>Tools &amp; skills</h2>
-<div class="chips"><span>iRAS Student Information System</span><span>MS Office &amp; Excel</span><span>Graphic Design</span><span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>After Effects</span><span>Social Media Marketing</span><span>Customer Support</span><span>Records Management</span><span>Budgeting</span></div></section>
+<div class="grid">
+<div class="card"><h3>Tools</h3><div class="chips"><span>iRAS Student Information System</span><span>MS Office &amp; Excel</span><span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>Adobe After Effects</span><span>Facebook &amp; Instagram</span><span>SMS Campaigns</span></div></div>
+<div class="card"><h3>Skills</h3><div class="chips"><span>Academic Administration</span><span>Admissions &amp; Education Counselling</span><span>Human Resource Management</span><span>Faculty Coordination</span><span>Event Management</span><span>Records Management</span><span>Budgeting &amp; Procurement Support</span><span>Graphic Design</span><span>Motion Graphics</span><span>Social Media Marketing</span><span>Customer Support</span><span>Stakeholder Communication</span><span>Bilingual: English &amp; Bengali</span></div></div>
+</div></section>
 
 <section id="evidence"><h2>Evidence of my work</h2>
 <p class="lead">Documents and samples that back up the responsibilities listed above. Sensitive personal data and figures have been removed.</p>
@@ -161,11 +219,25 @@ html{scroll-padding-top:64px}img{max-width:100%}
 <div class="card"><p>Mirpur-02, Dhaka-1216, Bangladesh</p><br>
 <a class="btn" style="margin-top:0" href="mailto:emrularefin@gmail.com">Email me</a>
 <a class="btn o" style="margin-top:0" href="tel:+8801913370770">+880 1913 370770</a>
-<a class="btn o" style="margin-top:0" href="https://linkedin.com/in/arefiniub" target="_blank" rel="noopener">LinkedIn</a></div></section>
+<a class="btn o" style="margin-top:0" href="https://linkedin.com/in/arefiniub" target="_blank" rel="noopener">LinkedIn</a>
+<!-- SOCIAL MEDIA LINKS: replace each href="#" with your full profile link. Delete any button you do not use. -->
+<div class="soc-row" id="soc">
+<a href="#" target="_blank" rel="noopener">Facebook</a>
+<a href="#" target="_blank" rel="noopener">Instagram</a>
+<a href="#" target="_blank" rel="noopener">YouTube</a>
+<a href="#" target="_blank" rel="noopener">Behance</a>
+<a href="#" target="_blank" rel="noopener">X (Twitter)</a>
+<a href="https://github.com/emrularefin" target="_blank" rel="noopener">GitHub</a>
+</div></div></section>
 </main>
 <footer>© <span id="y">2026</span> Md. Emrul Arefin. All rights reserved.</footer>
 <script>
 document.getElementById("y").textContent=new Date().getFullYear();
+document.querySelectorAll("#soc a").forEach(function(a){if(a.getAttribute("href")==="#")a.addEventListener("click",function(e){e.preventDefault()})});
+var rv=document.querySelectorAll("section,.stat");
+rv.forEach(function(e){e.classList.add("rv")});
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add("in")})}
+
 if(location.protocol.indexOf("http")===0){
  var els=[].slice.call(document.querySelectorAll("[data-ev]"));
  Promise.all(els.map(function(el){
