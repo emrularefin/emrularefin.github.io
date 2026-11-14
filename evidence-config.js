@@ -64,7 +64,7 @@ window.EVIDENCE = [
     note: "Animated and edited video work.",
     items: [
       "evidence/motion-graphics.mp4"
-      // , "https://www.youtube.com/watch?v=VIDEO_ID"
+      // , "https://youtu.be/lvwFiYNXrR0"
     ] },
 
   { skill: "AI & Prompt Engineering",
