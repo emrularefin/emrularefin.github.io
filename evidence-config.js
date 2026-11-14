@@ -63,8 +63,8 @@ window.EVIDENCE = [
   { skill: "Motion Graphics & Video",
     note: "Animated and edited video work.",
     items: [
-      "evidence/motion-graphics.mp4"
-      // , "https://youtu.be/lvwFiYNXrR0"
+      "evidence/motion-graphics.mp4",
+      "https://youtu.be/lvwFiYNXrR0"
     ] },
 
   { skill: "AI & Prompt Engineering",
