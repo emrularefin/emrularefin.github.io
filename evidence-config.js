@@ -13,7 +13,7 @@
    - To add another skill: copy one block, change skill, note and items.
    ===================================================================== */
 
-window.EVIDENCE_SETTINGS = { showPlaceholders: false };
+window.EVIDENCE_SETTINGS = { showPlaceholders: true };
 
 window.EVIDENCE = [
   { skill: "Academic Administration",
