@@ -148,6 +148,15 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 .evin{overflow:hidden;min-height:0;margin:0 -.5rem;padding:0 .5rem .8rem}
 .evin .evgrid{padding-top:1.5rem}
 @media(max-width:640px){.evtog{width:100%;justify-content:center}}
+.vis{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1.2rem}
+.vs{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--a);border-radius:12px;padding:.6rem 1.3rem;min-width:120px;transition:transform .3s,box-shadow .3s}
+.vs:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.1)}
+.vs b{display:block;font-size:1.6rem;line-height:1.2;color:var(--g)}.vs:nth-child(2) b{color:var(--r)}
+.vs span{font-size:.8rem;color:#222}
+.vl{align-self:center;font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:.45rem;color:#000}
+.vl i{width:9px;height:9px;border-radius:50%;background:var(--g);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+@media(max-width:640px){.vs{flex:1 1 28%;min-width:0;padding:.6rem .5rem}.vl{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -251,7 +260,14 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 <a href="https://github.com/emrularefin" target="_blank" rel="noopener">GitHub</a>
 </div></div></section>
 </main>
-<footer>© <span id="y">2026</span> Md. Emrul Arefin. All rights reserved.</footer>
+<footer>
+<div class="vis" id="vis" hidden>
+<div class="vs"><b id="vToday">0</b><span>Visitors today</span></div>
+<div class="vs"><b id="vMonth">0</b><span>This month</span></div>
+<div class="vs"><b id="vPrev">0</b><span>Last month</span></div>
+<div class="vl"><i></i>Live counter</div>
+</div>
+© <span id="y">2026</span> Md. Emrul Arefin. All rights reserved.</footer>
 <script>
 document.getElementById("y").textContent=new Date().getFullYear();
 document.querySelectorAll("#soc a").forEach(function(a){if(a.getAttribute("href")==="#")a.addEventListener("click",function(e){e.preventDefault()})});
@@ -308,6 +324,33 @@ function set(o,scroll){
 b.addEventListener("click",function(){set(!c.classList.contains("open"),true)});
 document.querySelectorAll('a[href="#evidence"]').forEach(function(a){a.addEventListener("click",function(){set(true,false)})});
 if(location.hash==="#evidence")set(true,false);
+})();
+</script>
+<script>
+(function(){
+var box=document.getElementById("vis");if(!box)return;
+var B="https://abacus.jasoncameron.dev",NS="emrularefin.github.io";
+var d=new Date(Date.now()+6*36e5),day=d.toISOString().slice(0,10),mon=day.slice(0,7);
+var prev=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()-1,1)).toISOString().slice(0,7);
+var skip=false;
+try{if(/[?&]nocount/.test(location.search))localStorage.setItem("evnc","1");
+ skip=localStorage.getItem("evnc")==="1"||localStorage.getItem("evd")===day}catch(e){}
+function call(op,key){return fetch(B+"/"+op+"/"+NS+"/"+key).then(function(r){return r.ok?r.json():null})
+ .then(function(j){return j&&typeof j.value==="number"?j.value:null}).catch(function(){return null})}
+function show(id,v){var e=document.getElementById(id),from=parseInt(e.textContent.replace(/,/g,""),10)||0,to=v||0;
+ if(from===to){e.textContent=to.toLocaleString();return}
+ var t0=null;function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/700,1);e.textContent=Math.round(from+(to-from)*k).toLocaleString();if(k<1)requestAnimationFrame(step)}
+ requestAnimationFrame(step)}
+function load(first){
+ var op=(first&&!skip)?"hit":"get";
+ Promise.all([call(op,"d-"+day),call(op,"m-"+mon),call("get","m-"+prev)]).then(function(r){
+  if(r[0]===null&&r[1]===null)return;
+  if(op==="hit"){try{localStorage.setItem("evd",day)}catch(e){}}
+  box.hidden=false;show("vToday",r[0]);show("vMonth",r[1]);show("vPrev",r[2]);
+ });
+}
+load(true);
+setInterval(function(){if(!document.hidden)load(false)},30000);
 })();
 </script>
 </body>
