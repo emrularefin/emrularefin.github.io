@@ -137,6 +137,17 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 .it figcaption{font-size:.85rem;margin-top:.3rem;color:var(--mute)}
 .it .open{display:inline-block;margin-top:.4rem;font-weight:600;font-size:.9rem;text-decoration:none}
 @media(max-width:640px){.evgrid{grid-template-columns:1fr}}
+.evtog{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1.6rem;border:2px solid var(--g);background:var(--g);color:#fff;border-radius:99px;font:600 1rem system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s}
+.evtog:hover{background:var(--r);border-color:var(--r);transform:translateY(-3px);box-shadow:0 10px 22px rgba(217,54,30,.3)}
+.evtog .chev{display:inline-block;transition:transform .4s}
+.evtog.on{background:var(--card);color:var(--g)}
+.evtog.on .chev{transform:rotate(180deg)}
+.evtog.on:hover{background:var(--g);color:#fff;border-color:var(--g);box-shadow:0 10px 22px rgba(79,125,50,.3)}
+.evbody{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .55s ease,visibility 0s .55s}
+.evbody.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .55s ease,visibility 0s}
+.evin{overflow:hidden;min-height:0;margin:0 -.5rem;padding:0 .5rem .8rem}
+.evin .evgrid{padding-top:1.5rem}
+@media(max-width:640px){.evtog{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -199,8 +210,11 @@ footer{border-top:5px solid;border-image:linear-gradient(90deg,var(--g) 0 25%,va
 
 <section id="evidence"><h2>Evidence of my work</h2>
 <p class="lead">Proof of my skills in PDF, image, video and YouTube formats. Sensitive personal data and figures have been removed.</p>
+<button type="button" class="evtog" id="evtog" aria-expanded="false" aria-controls="evbody"><span id="evlabel">Show evidence</span><span class="chev" aria-hidden="true">▾</span></button>
+<div class="evbody" id="evbody"><div class="evin">
 <div class="evgrid" id="evgrid"></div>
-<p class="lead" style="margin-top:1.2rem">Official references and verification letters are available on request.</p></section>
+<p class="lead" style="margin-top:1.2rem">Official references and verification letters are available on request.</p>
+</div></div></section>
 
 <section id="remote"><h2>Remote &amp; international work</h2>
 <p class="lead">I’m available for part-time or full-time remote roles anywhere in the world, on an hourly or monthly basis.</p>
@@ -246,7 +260,7 @@ rv.forEach(function(e){e.classList.add("rv")});
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.08});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add("in")})}
 
 </script>
-<script src="evidence-config.js"></script>
+<script src="evidence-config.js?v=2"></script>
 <script>
 (function(){
 var grid=document.getElementById("evgrid");if(!grid)return;
@@ -280,6 +294,20 @@ var jobs=cfg.map(function(c){
   r.forEach(function(x){w.appendChild(node(x.it,x.k,c.skill))});card.appendChild(w)});
 });
 Promise.all(jobs).then(function(){if(!grid.children.length)document.getElementById("evidence").hidden=true});
+})();
+</script>
+<script>
+(function(){
+var b=document.getElementById("evtog"),c=document.getElementById("evbody"),l=document.getElementById("evlabel");
+if(!b||!c)return;
+function set(o,scroll){
+ c.classList.toggle("open",o);b.classList.toggle("on",o);b.setAttribute("aria-expanded",o?"true":"false");
+ l.textContent=o?"Hide evidence":"Show evidence";
+ if(!o&&scroll)document.getElementById("evidence").scrollIntoView({behavior:"smooth",block:"start"});
+}
+b.addEventListener("click",function(){set(!c.classList.contains("open"),true)});
+document.querySelectorAll('a[href="#evidence"]').forEach(function(a){a.addEventListener("click",function(){set(true,false)})});
+if(location.hash==="#evidence")set(true,false);
 })();
 </script>
 </body>
