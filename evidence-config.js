@@ -76,7 +76,8 @@ window.EVIDENCE = [
   { skill: "AI Promotional Video",
     note: "Promotional videos created with AI tools.",
     items: [
-      "evidence/ai-promo-video.mp4","https://youtu.be/4cOV2Jxgk94"
+      "evidence/ai-promo-video.mp4",
+      "https://youtu.be/4cOV2Jxgk94"
     ] },
 
   { skill: "Credentials & Verification",
